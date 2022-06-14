@@ -1,0 +1,6 @@
+
+DispatcherServlet	: 모든 클라이언트 요청을 제일 먼저 처리하는 Front end 에 있는 Controller 임
+HandlerMapping		: 클라이언트 요청 정보를 처리할 Controller 를 알려주는 역할
+Controller			: 실질적인 요청을 처리하는 Controller 들
+					- Controller 인터페이스를 구현한 Controller 들 (login, logout, C, R, U, D 등의 Controller )
+					- 클라이언트 요청에 대한 작업을 완료하고, ViewResolver 에게 (String 형식으로) 뷰페이지를 알려줌(어디로 가야하는지)

@@ -1,5 +1,6 @@
 package polymorphism_5_2_1;
 
+import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component ("tv")
 public class SamsungTV implements TV {
 	
-//	@Resource (name = "sony")   //@Autowired 와 Qualifier를 합친 기능 
+	@Resource (name = "sony")   //@Autowired 와 Qualifier를 합친 기능 
 	private Speaker speaker;    // Speaker 는 인터페이스 : SonySpeaker, AppleSpeaker
 	private int price ; 			// 정수 변수 선언 
 	

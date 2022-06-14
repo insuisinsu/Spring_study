@@ -31,20 +31,8 @@ public class BoardDAOSpring {
 	
 	
 	//2. SQL 쿼리 정의 (상수로 선언 ) 
-//		private final String BOARD_INSERT = "insert into board (seq, title, writer,content) "
-//				+ "	values ((select nvl (max(seq), 0)+1 from board) , ?, ?, ?)"; 
-	
-		//트랜잭션 작동 실습용 
 		private final String BOARD_INSERT = "insert into board (seq, title, writer,content) "
-				+ "	values (? , ?, ?, ?)"; 
-	
-		
-		
-		
-		
-		
-		
-	
+				+ "	values ((select nvl (max(seq), 0)+1 from board) , ?, ?, ?)"; 
 		private final String BOARD_UPDATE = "update board set title = ? , content = ? "
 				+ "where seq = ?"; 
 		private final String BOARD_DELETE = "delete board where seq = ?"; 
@@ -55,17 +43,12 @@ public class BoardDAOSpring {
 	//1.글 등록 
 		public void insertBoard(BoardVO vo) {
 			System.out.println("===>Spring JDBC로 insertBoard() 기능처리 ");
-//			jdbcTemplate.update(BOARD_INSERT, vo.getTitle(),vo.getWriter(),vo.getContent()); 
-			
-			Object[] args = {vo.getSeq(), vo.getTitle(), vo.getWriter(), vo.getContent()};
-			jdbcTemplate.update(BOARD_INSERT, args);
+			jdbcTemplate.update(BOARD_INSERT, vo.getTitle(),vo.getWriter(),vo.getContent()); 
 		}
 	//2.글 수정 
 		public void updateBoard(BoardVO vo) {
 			System.out.println("===>Spring JDBC로 updateBoard() 기능처리 ");
-//			jdbcTemplate.update(BOARD_UPDATE,vo.getTitle(), vo.getContent(),vo.getSeq());
-			Object[] args = {vo.getTitle(), vo.getWriter(), vo.getContent()};
-			jdbcTemplate.update(BOARD_INSERT, args);
+			jdbcTemplate.update(BOARD_UPDATE,vo.getTitle(), vo.getContent(),vo.getSeq()); 
 		}
 	//3.글 삭제 
 		public void deleteBoard(BoardVO vo) {
