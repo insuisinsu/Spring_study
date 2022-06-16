@@ -17,7 +17,7 @@ public class InsertBoardController  {
 	@RequestMapping(value="/insertBoard.do")   // 클라이언트 요청 
 	public String insertBoard(BoardVO vo, BoardDAO boardDAO)  {
 		System.out.println("글 등록 처리- Spring MVC 어노테이션 작동 ");
-		
+		//Spring Framework 가 폼에서 넘긴 값을 setter 다 해줌
 		boardDAO.insertBoard(vo);
 		
 		return "getBoardList.do";   //Forward 방식으로 뷰 페이지 전송 

@@ -2,12 +2,24 @@
 1. Controller 클래스 위에 @Controller 어노테이션을 할당
 	@Controller 를 사용해서 Controller 를 구성할 경우 Spring FrameWork에서 제공해주는
 		Controller 인터페이스를 구현하지 않아도 된다.
+		--> Override 하지 않기 때문에 원하는 메소드로 작성할 수 있다
 	
 	 xml 로 했을 때는 Controller 의 메소드에 Request, Response 를 써야 했는데, 	
 	
+	
+	
+	
+	
+	//redirect : viewResolver 설정을 무시하고 리다이렉트 한다. 
+						//redirect : viewResolver의 prefix, suffix 가 적용되지 않도록 한다. 
+						
+						//기본적은 Controller가 View페이지를 던지는 방식은 Forward 방식입니다.
+							//클라이언트의 URL이 바뀌지 않는다. 
+							//viewResolver가 작동이 된다.    prefix, suffix 가 적용 
+						//redirect : 서버에서 전송한 페이지를 client가 재요청 
+							//클라이언트의 URL이 바뀐다. 
+							//viewResolver 가 작동이 안된다.
 
-xml 기반
-1. Controller 클래스는 네갸ㅜㅎ ㄺ므
 
 <XML 세팅>
 1. web.xml	: Spring 의 com.springbook.biz.view.controller.DispatcherServlet을 
