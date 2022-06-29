@@ -13,11 +13,11 @@ import com.springbook.biz.board.BoardVO;
 public class BoardServiceImpl implements BoardService {
 
 
-	@Autowired					//타입으로 객체 주입
-	private BoardDAO boardDAO;
+	//@Autowired					//타입으로 객체 주입
+	//private BoardDAO boardDAO;
 				//MVC M1, M2, MVC_Pramework 의 View
-	//@Autowired
-	//private BoardDAOSpring boardDAO;  //Spring 의 BoardDAO
+	@Autowired
+	private BoardDAOSpring boardDAO;  //Spring 의 BoardDAO
 	//private BoardDAOJPA boardDAO;
 	//private BoardDAO boardDAO;
 

@@ -10,4 +10,5 @@
 <!-- com.springbook.biz 하위의 모든 클래스에서 @(annotation)을 스캔 가능하도록  -->
 <context:component-scan base-package="com.springbook.biz"></context:component-scan>
 
+
 </beans>

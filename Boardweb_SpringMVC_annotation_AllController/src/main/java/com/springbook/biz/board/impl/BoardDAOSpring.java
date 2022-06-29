@@ -11,8 +11,9 @@ import com.springbook.biz.board.BoardVO;
 //DAO(Data Access Object)
 @Repository
 public class BoardDAOSpring {
-	//@Autowired
-	//private JdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
 
 	// SQL 명령어들
 	 private final String BOARD_INSERT = "insert into board(seq, title, writer, content) values((select nvl(max(seq), 0)+1 from board),?,?,?)";
@@ -58,11 +59,15 @@ public class BoardDAOSpring {
 	public List<BoardVO> getBoardList(BoardVO vo) {
 		System.out.println("===> Spring JDBC로 getBoardList() 기능 처리");
 		Object[] args = { vo.getSearchKeyword() };
+		 		
+		/*
 		if (vo.getSearchCondition().equals("TITLE")) {			
 			return jdbcTemplate.query(BOARD_LIST_T, args, new BoardRowMapper());
 		} else if (vo.getSearchCondition().equals("CONTENT")) {
 			return jdbcTemplate.query(BOARD_LIST_C, args, new BoardRowMapper());
 		}
-		return null;
+		*/
+		
+		return jdbcTemplate.query(BOARD_LIST, new BoardRowMapper());
 	}
 }
